@@ -559,6 +559,11 @@ body.fz-otwarty{overflow:hidden}
   .fz-siatka{grid-template-columns:1fr}
 }
 
+.do-gory{position:fixed;right:24px;bottom:24px;z-index:55;width:54px;height:54px;border-radius:50%;border:0;background:var(--pink-deep);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(184,33,92,.4);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s,transform .35s,background .2s}
+.do-gory.widac{opacity:1;transform:none;pointer-events:auto}
+.do-gory:hover{background:var(--pink)}
+.do-gory svg{width:24px;height:24px}
+@media (max-width:900px){.do-gory{right:16px;bottom:16px;width:48px;height:48px}}
 /* ===== DALEJ ===== */
 .dalej{padding:56px 0 140px;text-align:center}
 .dalej .ramka{border:1px dashed rgba(69,67,85,.45);border-radius:18px;padding:28px 32px;max-width:900px;margin:0 auto;font-size:15px}
@@ -1164,6 +1169,7 @@ body.fz-otwarty{overflow:hidden}
 </div>
 
 <div class="powiekszenie" id="powiekszenie" role="dialog" aria-modal="true"><button type="button" aria-label="Zamknij">×</button><img alt=""></div>
+<button class="do-gory" id="doGory" type="button" aria-label="Wróć na górę strony"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
 <!-- OPROWADZANIE -->
 <div class="tour" id="tour" hidden>
   <div class="pelny">
@@ -1233,6 +1239,8 @@ document.querySelectorAll('.wiecej-btn').forEach(b=>b.addEventListener('click',(
 })();
 // YouTube: odtwarzacz ładuje się dopiero po kliknięciu
 document.querySelectorAll('.yt-fasada').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?rel=0&autoplay=1';f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;b.replaceWith(f);}));
+// strzałka „wróć na górę”
+(()=>{const b=document.getElementById('doGory'),c=document.querySelector('.cover');new IntersectionObserver(([e])=>b.classList.toggle('widac',!e.isIntersecting),{threshold:0}).observe(c);b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));})();
 // prawdziwe wyniki: slider
 (()=>{const sl=[...document.querySelectorAll('.real-slajd')],lic=document.querySelector('.real-licznik');let i=0;const wl=e=>e.querySelectorAll('iframe[data-src]').forEach(f=>{f.src=f.dataset.src;f.removeAttribute('data-src');});wl(sl[0]);document.querySelectorAll('.real-strzalki button').forEach(b=>b.addEventListener('click',()=>{sl[i].classList.remove('aktywny');i=(i+ +b.dataset.kier+sl.length)%sl.length;sl[i].classList.add('aktywny');lic.textContent=(i+1)+' / '+sl.length;wl(sl[i]);}));})();
 // film: tło i główny w synchronizacji
