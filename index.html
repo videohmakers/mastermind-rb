@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rakieta Biznesu™ Mastermind – program mentoringowy Moniki Bochyńskiej | Bizneswoman w trampkach</title>
 <meta name="description" content="Rakieta Biznesu™ Mastermind – autorski 6-miesięczny program mentoringowy Moniki Bochyńskiej (Bizneswoman w trampkach) dla coach, mentorek i ekspertek. Flagowa oferta high ticket, powracający przychód, sprzedaż bez rozmów.">
+<link rel="preload" as="image" href="img/hero.webp" type="image/webp" fetchpriority="high">
+<link rel="preconnect" href="https://player.vimeo.com">
+<link rel="preconnect" href="https://i.ytimg.com">
 <link rel="canonical" href="https://mastermind-rb.monikabochynska.pl/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="author" content="Monika Bochyńska">
@@ -51,7 +54,7 @@ section{position:relative}
 
 /* ===== OKŁADKA ===== */
 .cover{display:grid;grid-template-columns:1fr 1fr;min-height:calc(100vh - 40px)}
-.cover .foto{position:relative;background:#3a2f33 url("img/hero.jpg") 50% 38%/cover no-repeat;padding:56px 56px 40px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.cover .foto{position:relative;background:#3a2f33 url("img/hero.jpg") 50% 38%/cover no-repeat;background-image:image-set(url("img/hero.webp") type("image/webp"),url("img/hero.jpg") type("image/jpeg"));padding:56px 56px 40px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .cover .foto::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(22,20,27,.55),rgba(22,20,27,0) 42%,rgba(22,20,27,0) 70%,rgba(22,20,27,.45))}
 .cover .foto>*{position:relative;z-index:1}
 .czas{color:#fff;margin-bottom:14px;display:block}
@@ -453,6 +456,10 @@ img.rz-foto{width:100%;height:100%;object-fit:cover;display:block}
 .real-cyt span{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;line-height:1.5}
 .real-cyt em{font-family:var(--akcent);font-weight:600;font-size:16px;text-transform:none;letter-spacing:0;color:var(--pink-deep)}
 .real-wideo-r{position:relative;background:#000;border-radius:4px;overflow:hidden;box-shadow:0 18px 40px rgba(43,41,53,.25)}
+.yt-fasada{position:absolute;inset:0;width:100%;height:100%;border:0;padding:0;cursor:pointer;background:#000 center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.yt-play{width:72px;height:72px;border-radius:50%;background:var(--pink);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.4);transition:transform .2s}
+.yt-fasada:hover .yt-play{transform:scale(1.08)}
+.yt-play svg{width:24px;height:24px;margin-left:4px}
 .real-wideo-r iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 .real-slajd.r-pion .real-wideo-r{aspect-ratio:9/16;max-height:72vh;justify-self:center;width:100%;max-width:340px}
 .real-slajd.r-poziom{grid-template-columns:.8fr 1.2fr}
@@ -978,9 +985,9 @@ body.fz-otwarty{overflow:hidden}
             <li><svg><use href="#gw"/></svg><span>teksty postów, karuzel i rolek, sekwencje Stories na konkretne dni <span class="wart">(wartość: 3 000 zł)</span></span></li>
             <li><svg><use href="#gw"/></svg><span>stronę ofertową Twojego produktu LT pod reklamy <span class="wart">(wartość: 1 000 zł)</span></span></li>
             <li><svg><use href="#gw"/></svg><span>scenariusze materiałów reklamowych &amp; pierwszą kampanię MetaAds (po spełnieniu wymagań technicznych) <span class="wart">(wartość: 2 000 zł)</span></span></li>
-            <li><svg><use href="#gw"/></svg><span>skille do Claude zgodne z Twoją marką: montaż rolek mówionych &amp; projektowanie karuzel <span class="wart">(wartość: 2 000 zł)</span></span></li>
+            <li><svg><use href="#gw"/></svg><span>dedykowane skille do Claude zaprojektowane pod Twoją markę: montaż rolek mówionych &amp; projektowanie karuzel <span class="wart">(wartość: 2 000 zł)</span></span></li>
           </ul>
-          <p class="gw-przyp">*abonamenty narzędzi (Easytools, Claude) i budżet reklamowy są wyceniane osobno.</p>
+          <p class="gw-przyp">*abonamenty narzędzi (Easytools, Claude) i budżet reklamowy są osobną inwestycją.</p>
           <div class="inw"><span class="kicker">Twoja Inwestycja:</span><p class="cena-op"><b>6 miesięcznych płatności w wysokości 3&nbsp;555&nbsp;PLN*</b> lub jednorazowo 21K PLN</p><p class="gw-przyp">*Płatność podzielona - zobowiązujesz się opłacić wszystkie transze.</p></div>
         </div>
         <a class="kop-btn" href="https://forms.gle/gAExzb3MbavvLCVa7" data-aplikuj="Rakieta Biznesu Done For You">Aplikuj <svg viewBox="0 0 40 16"><path d="M0 8h37M30 1l8 7-8 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></a>
@@ -1028,21 +1035,21 @@ body.fz-otwarty{overflow:hidden}
         <ul class="real-lista"><li>6 klientek high ticket w 14 dni</li></ul>
         <div class="real-cyt"><p>„Zawsze było tak, że ktoś mi zarysował moją ofertę, a ja później musiałam ją zrobić sama. A myśmy porozmawiały o mojej ofercie, Ty mi ją przedstawiłaś jak krowie na rowie. I ja tego zawsze szukałam. Ja wiem, że to jest 100% dobrze zrobione i mi jest łatwiej to puścić w świat.”</p><span>Monika Gaworecka<br><em>Trenerka, Ekspertka Zdrowia Metabolicznego</em></span></div>
       </div>
-      <div class="real-wideo-r"><iframe data-src="https://www.youtube-nocookie.com/embed/w-ACtsoyCD4?rel=0" title="Opinia: Monika Gaworecka" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="real-wideo-r"><button class="yt-fasada" data-yt="w-ACtsoyCD4" aria-label="Odtwórz: Opinia: Monika Gaworecka" style="background-image:url('https://i.ytimg.com/vi/w-ACtsoyCD4/hqdefault.jpg')"><span class="yt-play"><svg viewBox="0 0 18 18" fill="#fff"><path d="M5 3l10 6-10 6z"/></svg></span></button></div>
     </div>
     <div class="real-slajd r-poziom">
       <div class="real-txt">
         <ul class="real-lista"><li>Od 0 do 24 000 PLN w 30 dni przy 584 follow</li></ul>
         <div class="real-cyt"><p></p><span>Anna Kremnicka<br><em>Holistyczna Mentorka Zdrowia</em></span></div>
       </div>
-      <div class="real-wideo-r"><iframe data-src="https://www.youtube-nocookie.com/embed/eIKjhlaBV3U?rel=0" title="Opinia: Anna Kremnicka" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="real-wideo-r"><button class="yt-fasada" data-yt="eIKjhlaBV3U" aria-label="Odtwórz: Opinia: Anna Kremnicka" style="background-image:url('https://i.ytimg.com/vi/eIKjhlaBV3U/hqdefault.jpg')"><span class="yt-play"><svg viewBox="0 0 18 18" fill="#fff"><path d="M5 3l10 6-10 6z"/></svg></span></button></div>
     </div>
     <div class="real-slajd r-poziom">
       <div class="real-txt">
         <ul class="real-lista"><li>Od oferty za 1 400 zł do oferty za 12 000 zł w 7 miesięcy!</li></ul>
         <div class="real-cyt"><p></p><span>Karolina Ignatowicz<br><em>Video Content Creator</em></span></div>
       </div>
-      <div class="real-wideo-r"><iframe data-src="https://www.youtube-nocookie.com/embed/gCU-6MV_5Wo?rel=0" title="Opinia: Karolina Ignatowicz" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+      <div class="real-wideo-r"><button class="yt-fasada" data-yt="gCU-6MV_5Wo" aria-label="Odtwórz: Opinia: Karolina Ignatowicz" style="background-image:url('https://i.ytimg.com/vi/gCU-6MV_5Wo/hqdefault.jpg')"><span class="yt-play"><svg viewBox="0 0 18 18" fill="#fff"><path d="M5 3l10 6-10 6z"/></svg></span></button></div>
     </div>
     <div class="real-strzalki">
       <button aria-label="Poprzednia opinia" data-kier="-1"><svg viewBox="0 0 40 16"><path d="M40 8H3M10 1L2 8l8 7" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></button>
@@ -1224,6 +1231,8 @@ document.querySelectorAll('.wiecej-btn').forEach(b=>b.addEventListener('click',(
     setTimeout(()=>{form.hidden=true;fz.querySelector('.fz-glowa .fz-pasek').style.display='none';fz.querySelector('.fz-krok-nr').style.display='none';fz.querySelector('.fz-dzieki').hidden=false;},900);
   });
 })();
+// YouTube: odtwarzacz ładuje się dopiero po kliknięciu
+document.querySelectorAll('.yt-fasada').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?rel=0&autoplay=1';f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;b.replaceWith(f);}));
 // prawdziwe wyniki: slider
 (()=>{const sl=[...document.querySelectorAll('.real-slajd')],lic=document.querySelector('.real-licznik');let i=0;const wl=e=>e.querySelectorAll('iframe[data-src]').forEach(f=>{f.src=f.dataset.src;f.removeAttribute('data-src');});wl(sl[0]);document.querySelectorAll('.real-strzalki button').forEach(b=>b.addEventListener('click',()=>{sl[i].classList.remove('aktywny');i=(i+ +b.dataset.kier+sl.length)%sl.length;sl[i].classList.add('aktywny');lic.textContent=(i+1)+' / '+sl.length;wl(sl[i]);}));})();
 // film: tło i główny w synchronizacji
