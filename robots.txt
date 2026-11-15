@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mastermind-rb.monikabochynska.pl/sitemap.xml
