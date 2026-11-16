@@ -567,6 +567,41 @@ body.fz-otwarty{overflow:hidden}
 .do-gory:hover{background:var(--pink)}
 .do-gory svg{width:24px;height:24px}
 @media (max-width:900px){.do-gory{right:16px;bottom:16px;width:48px;height:48px}}
+/* ===== AKCJA LISTOPADOWA ===== */
+.akcja-pasek{display:block;background:var(--noc-ciemna);color:#fff;text-decoration:none}
+.akcja-pasek span:first-child{color:#E9CF98}
+.akcja-pasek .ak-strz{color:var(--pink-light)}
+.akcja-pasek:hover .ak-strz{color:#fff}
+.ak-gora{display:flex;align-items:center;justify-content:center;gap:56px;background:var(--pink-soft);color:var(--noc);padding:14px 24px;border-bottom:1px solid rgba(184,33,92,.15)}
+.ak-gora-tekst{text-align:left;line-height:1.35}
+.ak-gora-tekst strong{display:block;color:var(--pink-deep);font-weight:800;font-size:14px;letter-spacing:.02em;text-transform:uppercase}
+.ak-gora-tekst small{font-size:13px;color:var(--grafit)}
+.ak-gora-licz{display:flex}
+.ak-gora-licz span{display:flex;flex-direction:column;align-items:center;min-width:64px;padding:0 14px;font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grafit)}
+.ak-gora-licz span+span{border-left:1px solid rgba(184,33,92,.25)}
+.ak-gora-licz b{font-size:26px;font-weight:800;line-height:1.1;color:var(--noc);letter-spacing:0;font-variant-numeric:tabular-nums}
+.ak-gora-tekst small b{font-weight:800;color:var(--noc)}
+.ak-gora-tekst mark{background:var(--pink);color:#fff;font-weight:800;font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:3px;margin-left:4px;white-space:nowrap}
+.ak-gora-link{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-deep);text-decoration:underline;text-underline-offset:4px}
+.ak-gora-link:hover{color:var(--pink)}
+@media (max-width:900px){.ak-gora{flex-wrap:wrap;gap:8px 16px;padding:12px 14px}.ak-gora-tekst{text-align:center;width:100%}.ak-gora-tekst small{display:block;font-size:0}.ak-gora-tekst small mark{font-size:11px;margin:4px 0 0;display:inline-block}.ak-gora-licz span{min-width:0;padding:0 10px}.ak-gora-licz b{font-size:20px}}
+body.po-akcji .akcja{display:none!important}
+.akcja-ramka{position:relative;background:var(--noc-ciemna);color:#fff;border-radius:6px;padding:44px 48px 36px;margin:0 auto 48px;max-width:980px;text-align:center;overflow:hidden}
+.akcja-ramka::before{content:"";position:absolute;inset:10px;border:1px solid rgba(227,194,131,.55);border-radius:4px;pointer-events:none}
+.ak-kicker{display:block;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#E9CF98;margin-bottom:14px}
+.akcja-ramka h3{margin:0 0 30px;font-weight:800;text-transform:uppercase;font-size:clamp(22px,2.4vw,32px);line-height:1.15;letter-spacing:-.01em}
+.akcja-ramka h3 em{display:block;font-family:var(--akcent);font-style:italic;font-weight:600;text-transform:none;color:var(--pink-light);font-size:1.2em;letter-spacing:0;margin-top:4px}
+.ak-grid{display:grid;grid-template-columns:1fr 1fr;text-align:left;border-top:1px solid var(--linia-noc);border-bottom:1px solid var(--linia-noc)}
+.ak-grid>div{padding:24px 28px 26px 0;display:flex;gap:18px}
+.ak-grid>div+div{border-left:1px solid var(--linia-noc);padding-left:28px;padding-right:0}
+.ak-nr{font-family:var(--akcent);font-weight:500;font-size:28px;line-height:1;color:var(--pink)}
+.ak-grid p{margin:0;font-size:15px;line-height:1.6;color:rgba(255,255,255,.86)}
+.ak-grid b{color:#fff}
+.ak-licznik{display:flex;justify-content:center;gap:12px;margin:28px 0 14px}
+.ak-licznik span{display:flex;flex-direction:column;align-items:center;min-width:72px;padding:10px 6px;border:1px solid rgba(227,194,131,.5);border-radius:4px;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#E9CF98}
+.ak-licznik b{font-weight:800;font-size:28px;line-height:1.1;color:#fff;letter-spacing:0}
+.ak-dop{margin:0;font-size:12px;color:rgba(255,255,255,.6)}
+@media (max-width:900px){.akcja-ramka{padding:36px 22px 28px}.ak-grid{grid-template-columns:1fr}.ak-grid>div,.ak-grid>div+div{padding:20px 0;border-left:0}.ak-grid>div+div{border-top:1px solid var(--linia-noc)}.ak-licznik span{min-width:60px}.akcja-pasek span:nth-child(2){display:none}}
 /* ===== DALEJ ===== */
 .dalej{padding:56px 0 140px;text-align:center}
 .dalej .ramka{border:1px dashed rgba(69,67,85,.45);border-radius:18px;padding:28px 32px;max-width:900px;margin:0 auto;font-size:15px}
@@ -673,6 +708,7 @@ body.fz-otwarty{overflow:hidden}
 </svg>
 
 <!-- PASEK INFO -->
+<div class="ak-gora akcja"><div class="ak-gora-tekst"><strong>Ostatnie wejście na pokład w 2026 r.</strong><small><b>Projekt Boże Narodzenie:</b> druga sesja 1:1 + miesiąc w programie za free <mark>tylko do 30.11</mark></small></div><div class="ak-gora-licz" data-koniec="2026-11-30T23:59:59+01:00"><span><b data-d>00</b>dni</span><span><b data-h>00</b>godzin</span><span><b data-m>00</b>minut</span><span><b data-s>00</b>sekund</span></div><a class="ak-gora-link" href="#dolacz">Sprawdź →</a></div>
 <div class="info"><span>Rakieta Biznesu Mastermind</span><span>Sesje na żywo</span><span>Wsparcie 1-1</span><span>Dostęp na 6 miesięcy</span></div>
 
 <!-- 1. OKŁADKA -->
@@ -962,13 +998,23 @@ body.fz-otwarty{overflow:hidden}
       <p>Jeśli to czytasz i czujesz, że chcesz wejść w tryb Wolności i Wpływu - będzie mi ogromnie miło Cię przywitać.</p>
       <p><b>Masz do wyboru 2 opcje</b> (podane kwoty są kwotami brutto i zawierają podatek VAT23%)<b>:</b></p>
     </div>
+    <div class="akcja-ramka akcja rv">
+      <span class="ak-kicker">Projekt Boże Narodzenie · tylko do 30 listopada</span>
+      <h3>Wchodząc na pokład w listopadzie, <em>dostajesz dodatkowo:</em></h3>
+      <div class="ak-grid">
+        <div><span class="ak-nr">[01]</span><p><b>Druga sesja 1:1</b> – wspólnie opracujemy strategię Soulmate Content™, by przyciągnąć do Ciebie nowych klientów oraz zamienić obecną społeczność z poszukiwaczy darmowej wiedzy na klientów high ticket dzięki jednej publikacji dziennie.</p></div>
+        <div><span class="ak-nr">[02]</span><p><b>Bonus</b> – dostaniesz dodatkowy 1 miesiąc w programie RB za free, jeśli wejdziesz na pokład w listopadzie.</p></div>
+      </div>
+      <div class="ak-licznik" data-koniec="2026-11-30T23:59:59+01:00"><span><b data-d>0</b>dni</span><span><b data-h>0</b>godz.</span><span><b data-m>0</b>min</span><span><b data-s>0</b>sek</span></div>
+      <p class="ak-dop">Dotyczy obu opcji: Rakieta Biznesu Mastermind i Rakieta Biznesu Done For You.</p>
+    </div>
     <div class="karty-op rv">
       <div class="kop k1">
-        <div class="kop-glowa"><h3>Rakieta Biznesu Mastermind</h3><span class="kop-pod">(wszystko wymienione powyżej)</span></div>
+        <div class="kop-glowa"><h3>Rakieta Biznesu Mastermind</h3><span class="kop-pod">(wszystko wymienione powyżej)</span><span class="miejsce-pill akcja">Dostępnych 5 miejsc</span></div>
         <div class="kop-cialo">
           <ul>
             <li><svg><use href="#ptak"/></svg><span><b>6 miesięcy pracy według sprawdzonego planu:</b> jasna ścieżka faza po fazie, by zbudować, dopracować i wyskalować Twoją flagową ofertę.</span></li>
-            <li><svg><use href="#ptak"/></svg><span><b>Kick Off 1-1 z Moniką</b> <span class="wart">(wartość: 3 000 zł)</span><b>:</b> 90-120 min. spotkania 1:1 – audyt Twojej oferty, komunikacji, systemu i klientów oraz klarowny kierunek na najbliższe miesiące.</span></li>
+            <li><svg><use href="#ptak"/></svg><span><b>Kick Off 1-1 z Moniką</b> <span class="wart">(wartość: 3 000 zł)</span><b>:</b> 90-120 min. spotkania 1:1 – audyt Twojej oferty, komunikacji, systemu i klientów + opracujemy 7-dniowy Plan ROI, tak aby Twoja inwestycja zwróciła się jak najszybciej.</span></li>
             <li><svg><use href="#ptak"/></svg><span><b>Spotkania Mastermind w kameralnej grupie 1x/tydz.:</b>
               <ul class="pod-lista">
                 <li><b>Hot seats Q&amp;A:</b> przynieś swoje pytania, blokady i wszystko, co utknęło po drodze – rozwiążemy to razem na żywo.</li>
@@ -977,9 +1023,9 @@ body.fz-otwarty{overflow:hidden}
               </ul></span></li>
             <li><svg><use href="#ptak"/></svg><span><b>Platforma RB™</b> <span class="wart">(wartość: ponad 14 000 zł)</span></span></li>
             <li><svg><use href="#ptak"/></svg><span><b>Asynchroniczny Mastermind:</b> voice mentoringi i odpowiedzi na Twoje pytania między spotkaniami – pytasz, dostajesz feedback i nie tracisz momentum.</span></li>
-            <li><svg><use href="#ptak"/></svg><span><b>Kosmiczna Społeczność™</b></span></li>
+            <li><svg><use href="#ptak"/></svg><span><b>Kosmiczna Społeczność™ &amp; Content Lab™</b></span></li>
             <li><svg><use href="#ptak"/></svg><span><b>Bilet na event Rakiet Biznesu</b></span></li>
-            <li><svg><use href="#ptak"/></svg><span><b>Spotkania z gośćmi specjalnymi, dedykowani asystenci GPT, Content Lab™</b></span></li>
+            <li><svg><use href="#ptak"/></svg><span><b>Spotkania z gośćmi specjalnymi &amp; skille do Claude</b> (montaż rolek mówionych &amp; projektowanie karuzel)</span></li>
           </ul>
           <p class="suma">To ponad 43 000 zł w spersonalizowanym wsparciu, żeby Twoja oferta nie tylko dobrze wyglądała, ale naprawdę się skalowała.</p>
           <div class="inw"><span class="kicker">Twoja Inwestycja:</span><p class="cena-op"><b>6 miesięcznych płatności w wysokości 1&nbsp;555&nbsp;PLN*</b> lub jednorazowo 8K PLN</p><p class="gw-przyp">*Płatność podzielona - zobowiązujesz się opłacić wszystkie transze.</p></div>
@@ -1249,6 +1295,11 @@ document.querySelectorAll('.wiecej-btn').forEach(b=>b.addEventListener('click',(
 document.querySelectorAll('.yt-fasada').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.youtube-nocookie.com/embed/'+b.dataset.yt+'?rel=0&autoplay=1';f.title=b.getAttribute('aria-label');f.allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture';f.allowFullscreen=true;b.replaceWith(f);}));
 // strzałka „wróć na górę”
 (()=>{const b=document.getElementById('doGory'),c=document.querySelector('.cover');new IntersectionObserver(([e])=>b.classList.toggle('widac',!e.isIntersecting),{threshold:0}).observe(c);b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));})();
+// akcja listopadowa: licznik + automatyczne ukrycie po terminie
+(()=>{const ls=[...document.querySelectorAll('[data-koniec]')];const koniec=new Date((ls[0]&&ls[0].dataset.koniec)||'2026-11-30T23:59:59+01:00').getTime();const z=n=>String(n).padStart(2,'0');
+const t=()=>{const r=koniec-Date.now();if(r<=0){document.body.classList.add('po-akcji');return false;}
+ const d=Math.floor(r/864e5),h=Math.floor(r/36e5)%24,m=Math.floor(r/6e4)%60,s=Math.floor(r/1e3)%60;ls.forEach(l=>{l.querySelector('[data-d]').textContent=z(d);l.querySelector('[data-h]').textContent=z(h);l.querySelector('[data-m]').textContent=z(m);l.querySelector('[data-s]').textContent=z(s);});return true;};
+if(t())setInterval(t,1000);})();
 // prawdziwe wyniki: slider
 (()=>{const sl=[...document.querySelectorAll('.real-slajd')],lic=document.querySelector('.real-licznik');let i=0;const wl=e=>e.querySelectorAll('iframe[data-src]').forEach(f=>{f.src=f.dataset.src;f.removeAttribute('data-src');});wl(sl[0]);document.querySelectorAll('.real-strzalki button').forEach(b=>b.addEventListener('click',()=>{sl[i].classList.remove('aktywny');i=(i+ +b.dataset.kier+sl.length)%sl.length;sl[i].classList.add('aktywny');lic.textContent=(i+1)+' / '+sl.length;wl(sl[i]);if(innerWidth<=900){const sc=document.querySelector('.real-scena');window.scrollTo({top:sc.getBoundingClientRect().top+scrollY-12,behavior:'instant'});}}));})();
 // film: tło i główny w synchronizacji
