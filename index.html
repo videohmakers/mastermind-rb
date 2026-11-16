@@ -628,7 +628,9 @@ body.fz-otwarty{overflow:hidden}
   .real-scena{padding:0 20px}
   .real{padding-bottom:64px}
   .real-slajd,.real-slajd.aktywny{grid-template-columns:1fr;gap:28px}
-  .real-strzalki{position:static;flex-direction:row;justify-content:center;margin-top:28px}
+  .real{overflow:visible;overflow-x:clip}
+  .real-strzalki{position:sticky;bottom:14px;flex-direction:row;justify-content:center;margin-top:28px;z-index:6}
+  .real-strzalki button{background:rgba(255,255,255,.85);backdrop-filter:blur(4px)}
   .real-cyt{grid-template-columns:1fr}
   .real-napis{font-size:14.5vw;white-space:normal;line-height:.85;padding:28px 12px 0;margin-bottom:36px}
   .real-lista li{font-size:24px}
@@ -1248,7 +1250,7 @@ document.querySelectorAll('.yt-fasada').forEach(b=>b.addEventListener('click',()
 // strzałka „wróć na górę”
 (()=>{const b=document.getElementById('doGory'),c=document.querySelector('.cover');new IntersectionObserver(([e])=>b.classList.toggle('widac',!e.isIntersecting),{threshold:0}).observe(c);b.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));})();
 // prawdziwe wyniki: slider
-(()=>{const sl=[...document.querySelectorAll('.real-slajd')],lic=document.querySelector('.real-licznik');let i=0;const wl=e=>e.querySelectorAll('iframe[data-src]').forEach(f=>{f.src=f.dataset.src;f.removeAttribute('data-src');});wl(sl[0]);document.querySelectorAll('.real-strzalki button').forEach(b=>b.addEventListener('click',()=>{sl[i].classList.remove('aktywny');i=(i+ +b.dataset.kier+sl.length)%sl.length;sl[i].classList.add('aktywny');lic.textContent=(i+1)+' / '+sl.length;wl(sl[i]);}));})();
+(()=>{const sl=[...document.querySelectorAll('.real-slajd')],lic=document.querySelector('.real-licznik');let i=0;const wl=e=>e.querySelectorAll('iframe[data-src]').forEach(f=>{f.src=f.dataset.src;f.removeAttribute('data-src');});wl(sl[0]);document.querySelectorAll('.real-strzalki button').forEach(b=>b.addEventListener('click',()=>{sl[i].classList.remove('aktywny');i=(i+ +b.dataset.kier+sl.length)%sl.length;sl[i].classList.add('aktywny');lic.textContent=(i+1)+' / '+sl.length;wl(sl[i]);if(innerWidth<=900){const sc=document.querySelector('.real-scena');window.scrollTo({top:sc.getBoundingClientRect().top+scrollY-12,behavior:'instant'});}}));})();
 // film: tło i główny w synchronizacji
 (()=>{const a=document.querySelector('.film-glowny'),b=document.querySelector('.film-tlo');if(!a||!b)return;setInterval(()=>{if(Math.abs(a.currentTime-b.currentTime)>.3)b.currentTime=a.currentTime;},1000);})();
 // powiększanie zrzutów w "Jak to wygląda w praktyce"
